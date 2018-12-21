@@ -9,3 +9,4 @@ c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.
 c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.pdb
 C:\Users\Mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.CreatePatientForm.resources
 C:\Users\Mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.Appoinment.resources
+C:\Users\Mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.ReferenceBookForm.resources

@@ -9,51 +9,43 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;
 
-
 namespace Talon
 {
-    public partial class Appoinment : Form
+    public partial class ReferenceBookForm : Form
     {
-        private readonly string AppointmentFileName = @"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Appointment.docx";
-        public Appoinment()
+        private readonly string ReferenceBookFileName = @"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Reference Book example.docx";
+        public ReferenceBookForm()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void ReferenceBookForm_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnAdd_Click(object sender, EventArgs e)
         {
             //наши поля талона,которые названы как в шаблоне
-            var speciality = txt_speciality.Text;
-            var name = txt_name.Text;
             var diagnosis = txt_diagnosis.Text;
-            var therapy = txt_therapy.Text;
-
-            var date = DateTime.Now;
+            var comment = txt_comment.Text;
 
             var wordApp = new Word.Application();
             wordApp.Visible = false;  //чтобы не видеть мигающий ворд при печати
 
             try
             {
-                var wordDocument = wordApp.Documents.Open(AppointmentFileName); //открываем для вставки данных в шаблон
-                ReplaceWordStub("{speciality}", speciality, wordDocument);
-                ReplaceWordStub("{name}", name, wordDocument);
+                var wordDocument = wordApp.Documents.Open(ReferenceBookFileName); //открываем для вставки данных в шаблон
                 ReplaceWordStub("{diagnosis}", diagnosis, wordDocument);
-                ReplaceWordStub("{therapy}", therapy, wordDocument);
-                ReplaceWordStub("{date}", date.ToShortDateString(), wordDocument);
-                wordDocument.SaveAs(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Cards\Appointment_result.docx");
+                ReplaceWordStub("{comment}", comment, wordDocument);
+                wordDocument.SaveAs(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Reference_tmp.docx");
                 wordDocument.Close();
 
                 //тут надо создать переменную для индентификатора, чтобы открывать нужную карту
-                var cardDocument = wordApp.Documents.Open(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Cards\print here id.docx");
-                cardDocument.Words.Last.InsertBreak(Word.WdBreakType.wdPageBreak); //вставим следующую страницу
-                cardDocument.Words.Last.InsertFile(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Cards\Appointment_result.docx");
-                cardDocument.Close();
+                var bookDocument = wordApp.Documents.Open(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Referense Book.docx");
+                bookDocument.Words.Last.InsertParagraph(); 
+                bookDocument.Words.Last.InsertFile(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Reference_tmp.docx");
+                bookDocument.Close();
             }
             catch
             {
@@ -65,12 +57,9 @@ namespace Talon
             }
 
             txt_diagnosis.Clear();
-            txt_therapy.Clear();
+            txt_comment.Clear();
         }
 
-
-    
-        //функция для замены в шаблоне
         private void ReplaceWordStub(string StubToReplace, string text, Word.Document wordDocument)
         {
             var range = wordDocument.Content; //область,где мы будем что-то вставлять, в нашем случае - весь документ
@@ -78,9 +67,5 @@ namespace Talon
             range.Find.Execute(FindText: StubToReplace, ReplaceWith: text); //меняем в шаблоне на нужное нам
         }
 
-        private void Appoinment_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

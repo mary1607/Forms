@@ -143,6 +143,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Appoinment";
             this.Text = "Appoinment";
+            this.Load += new System.EventHandler(this.Appoinment_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

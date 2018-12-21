@@ -50,7 +50,9 @@ namespace Talon
                 ReplaceWordStub("{address}", address, wordDocument);
                 ReplaceWordStub("{registration_date}", date.ToShortDateString() , wordDocument);
 
-                wordDocument.SaveAs(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Cards\print here surname and name.docx");
+                // int id = .....;
+                //не ругайся, я не помню синтаксис в указании пути
+                wordDocument.SaveAs(@"C:\Users\Mary\Documents\Visual Studio 2015\Projects\Talon\Cards\print here id.docx");
                 //я какашка и у меня нет ворда, поэтому у меня это не работает
                 //wordApp.Visible = true; //если хотим, чтобы нам еще и открылся вордовский файл
                 wordDocument.Close(); //если хотим сами потом залезть в проект и открыть,а то у меня винда виснет при ворде, на которого нет лицензии, видосиками и вижлой

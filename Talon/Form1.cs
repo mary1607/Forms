@@ -10,6 +10,11 @@ using System.Windows.Forms;
 using Word = Microsoft.Office.Interop.Word;    //без этого не заработает, проверь, что у тебя это подключено 
                                                 //и добавлено в ссылки(я устанавливала дополнительно)
 
+
+
+// если вдруг ты очень захочешь, можно сделать защиту от инъекций sql  и эта красненькая фигня об обязательности
+
+
 namespace Talon
 {
     public partial class Form1 : Form
@@ -80,6 +85,11 @@ namespace Talon
             var range = wordDocument.Content; //область,где мы будем что-то вставлять, в нашем случае - весь документ
             range.Find.ClearFormatting();  //очищаем предыдущие поиски в документе
             range.Find.Execute(FindText: StubToReplace, ReplaceWith: text); //меняем в шаблоне на нужное нам
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

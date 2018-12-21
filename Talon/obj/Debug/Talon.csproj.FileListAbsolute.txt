@@ -1,0 +1,11 @@
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\bin\Debug\Talon.exe.config
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\bin\Debug\Talon.exe
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\bin\Debug\Talon.pdb
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.csprojResolveAssemblyReference.cache
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.Form1.resources
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.Properties.Resources.resources
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.csproj.GenerateResource.Cache
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.exe
+c:\users\mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.pdb
+C:\Users\Mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.CreatePatientForm.resources
+C:\Users\Mary\documents\visual studio 2015\Projects\Talon\Talon\obj\Debug\Talon.Appoinment.resources
